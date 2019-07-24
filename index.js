@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const Recipe = require('./models/Recipe'); // Import of the model Recipe from './models/Recipe'
 const data = require('./data.js');  // Import of the data from './data.js'
 
+
+
+  // newRecipe.save()
+
+
 // Connection to the database "recipeApp"
 mongoose.connect('mongodb://localhost/recipeApp', { useNewUrlParser: true })
   .then(() => {
@@ -10,4 +15,20 @@ mongoose.connect('mongodb://localhost/recipeApp', { useNewUrlParser: true })
     console.error('Error connecting to mongo', err);
   });
 
+
   
+
+// Recipe.create({
+//     title: "blsbllbalalbabalb",
+//     level:"Amateur Chef",
+//     ingredients:["Chicken breast", "Kurkuma","Salt","pepper", "rice"],
+//     cuisine: "Pakistan"
+// })  
+
+Recipe.insertMany(data)
+  .then(() =>{//Add recipes to database
+    console.log("new recipes added");
+    })
+    .catch((error) => {
+      console.log(error);
+    })
