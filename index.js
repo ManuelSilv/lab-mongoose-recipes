@@ -19,16 +19,25 @@ mongoose.connect('mongodb://localhost/recipeApp', { useNewUrlParser: true })
   
 
 // Recipe.create({
-//     title: "blsbllbalalbabalb",
-//     level:"Amateur Chef",
-//     ingredients:["Chicken breast", "Kurkuma","Salt","pepper", "rice"],
-//     cuisine: "Pakistan"
-// })  
+//   title: "Curry Chicken",
+//   level:"Amateur Chef", 
+//   ingredients:
+//   ["Chicken breast", "Kurkuma","Salt","pepper", "rice"], cuisine:"Pakistan"})
 
-Recipe.insertMany(data)
-  .then(() =>{//Add recipes to database
-    console.log("new recipes added");
+// Recipe.insertMany(data)
+//   .then(() =>{//Add recipes to database
+//     console.log("new recipes added");
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     })
+
+Recipe.updateOne({
+    title:"Rigatoni alla Genovese"},
+    {duration: 100})
+  .then(() => {//Update recipes
+    console.log("Recipe succesfully updated!");
     })
     .catch((error) => {
-      console.log(error);
+    console.log(error);
     })

@@ -19,7 +19,7 @@ const Recipe = mongoose.model('Recipe', recipeSchema);
 
 // const newRecipe = new Recipe;
 //  ({
-//   title: "Lamb Chicken Curry", level:"Amateur Chef", ingredients:
+//   title: "Curry Chicken", level:"Amateur Chef", ingredients:
 //   ["Chicken breast", "Kurkuma","Salt","pepper", "rice"], cuisine:
 //   "Pakistan"})
 //   // newRecipe.save()
