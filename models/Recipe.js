@@ -17,28 +17,11 @@ const recipeSchema = new Schema({
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
-// const newRecipe = new Recipe;
-//  ({
-//   title: "Curry Chicken", level:"Amateur Chef", ingredients:
-//   ["Chicken breast", "Kurkuma","Salt","pepper", "rice"], cuisine:
-//   "Pakistan"})
-//   // newRecipe.save()
+const userSchema = new Schema({
+  username: {type: String, unigue: true},
+  passwword: {type: String}
+})
 
-
-//   .then = () =>{//Update recipe
-//       console.log("new recipe in progress...")
-//       return Recipe.update(title: "Chicken Curry");};
-
-//   .then = () =>{//Remove recipe
-//         console.log("new recipe in progress...")
-//         return Recipe.insertMany(Data);};
-
-//   .then = () =>{//Close database
-//           console.log("new recipe in progress...")
-//           return Recipe.insertMany(Data);};
-// //  })
-// //  .then = () =>{
-// //    console.log("recipe renewal updating..")
-// //   return.update(title: "Chicken Massala");
-// //  })
+const User = mongoose.model("user", userSchema, "user");
 module.exports = Recipe;
+module.exports = User;
