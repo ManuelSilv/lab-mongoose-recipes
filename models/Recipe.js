@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-//const Recipe = require('./models/Recipe.js').default; // Import of the model Recipe from './models/Recipe'
-//const data = require('../data.js');  // Import of the data from './data.js'
 const Schema = mongoose.Schema;
+const express = require('express');
+const router = express.Router();
 //
 const recipeSchema = new Schema({
   title: { type: String, unique:true, required: true},
@@ -17,11 +17,6 @@ const recipeSchema = new Schema({
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
-const userSchema = new Schema({
-  username: {type: String, unigue: true},
-  passwword: {type: String}
-})
 
-const User = mongoose.model("user", userSchema, "user");
 module.exports = Recipe;
-module.exports = User;
+module.exports = router;

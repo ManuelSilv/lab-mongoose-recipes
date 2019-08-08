@@ -1,0 +1,13 @@
+<ul>
+    <li><a href="/">home</a></li> 
+    {{#if user }}
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/views/create">Creat Recipe</a></li>
+        <li><a href="/views/profile">Profile</a></li>
+        <li><a href="/views/logout">Logout</a></li>
+        <li>Welcome {{user.username}}</li>
+    {{else}}
+        <li><a href="/views/signup">Sign up</a></li>
+        <li><a href="/views/login">Login</a></li>
+    {{/if}}
+</ul>
